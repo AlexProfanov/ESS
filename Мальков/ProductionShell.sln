@@ -1,0 +1,20 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+   Project("{7ffcb6c7-9235-4f78-ba51-2498385f7347}") = "ProductionShell", "ProductionShell/ProductionShell.csproj", "{4cfae996-7a74-402c-8f60-4241ec832572}"
+EndProject
+Global
+GlobalSection(SolutionConfigurationPlatforms) = preSolution
+				Debug|Any CPU = Debug|Any CPU
+				Release|Any CPU = Release|Any CPU
+EndGlobalSection
+GlobalSection(ProjectConfigurationPlatforms) = postSolution
+   {4cfae996-7a74-402c-8f60-4241ec832572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+   {4cfae996-7a74-402c-8f60-4241ec832572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+   {4cfae996-7a74-402c-8f60-4241ec832572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+   {4cfae996-7a74-402c-8f60-4241ec832572}.Release|Any CPU.Build.0 = Release|Any CPU
+EndGlobalSection
+GlobalSection(MonoDevelopProperties) = preSolution
+
+EndGlobalSection
+EndGlobal
+		
