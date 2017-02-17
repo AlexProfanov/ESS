@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+   Project("{112e70d9-b763-4161-93d4-826b4625ea73}") = "ZShellCore", "ZShellCore/ZShellCore.csproj", "{3be24142-a7c6-4991-bca5-6ff03be8287c}"
+EndProject
+   Project("{112e70d9-b763-4161-93d4-826b4625ea73}") = "ZShellUI", "ZShellUI/ZShellUI.csproj", "{a5176b55-1189-4444-8b76-8fb4436ca4d1}"
+EndProject
+Global
+GlobalSection(SolutionConfigurationPlatforms) = preSolution
+				Debug|Any CPU = Debug|Any CPU
+				Release|Any CPU = Release|Any CPU
+EndGlobalSection
+GlobalSection(ProjectConfigurationPlatforms) = postSolution
+   {3be24142-a7c6-4991-bca5-6ff03be8287c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+   {3be24142-a7c6-4991-bca5-6ff03be8287c}.Debug|Any CPU.Build.0 = Debug|Any CPU
+   {3be24142-a7c6-4991-bca5-6ff03be8287c}.Release|Any CPU.ActiveCfg = Release|Any CPU
+   {3be24142-a7c6-4991-bca5-6ff03be8287c}.Release|Any CPU.Build.0 = Release|Any CPU
+   {a5176b55-1189-4444-8b76-8fb4436ca4d1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+   {a5176b55-1189-4444-8b76-8fb4436ca4d1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+   {a5176b55-1189-4444-8b76-8fb4436ca4d1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+   {a5176b55-1189-4444-8b76-8fb4436ca4d1}.Release|Any CPU.Build.0 = Release|Any CPU
+EndGlobalSection
+GlobalSection(MonoDevelopProperties) = preSolution
+
+EndGlobalSection
+EndGlobal
+		

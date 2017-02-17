@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{3BE24142-A7C6-4991-BCA5-6FF03BE8287C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>ZShellCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties/AssemblyInfo.cs" />
+    <Compile Include="ZShellCore/AskedVariable.cs" />
+    <Compile Include="ZShellCore/Condition.cs" />
+    <Compile Include="ZShellCore/ConditionComparer.cs" />
+    <Compile Include="ZShellCore/ConditionEqualComparer.cs" />
+    <Compile Include="ZShellCore/Container.cs" />
+    <Compile Include="ZShellCore/DeducibleAskedVariable.cs" />
+    <Compile Include="ZShellCore/DeducibleVariable.cs" />
+    <Compile Include="ZShellCore/Enumeration.cs" />
+    <Compile Include="ZShellCore/Exposition.cs" />
+    <Compile Include="ZShellCore/Global.cs" />
+    <Compile Include="ZShellCore/IO.cs" />
+    <Compile Include="ZShellCore/KnowledgeBase.cs" />
+    <Compile Include="ZShellCore/NamedItem.cs" />
+    <Compile Include="ZShellCore/Resolution.cs" />
+    <Compile Include="ZShellCore/Rule.cs" />
+    <Compile Include="ZShellCore/Value.cs" />
+    <Compile Include="ZShellCore/Variable.cs" />
+    <Compile Include="ZShellCore/VariableAndValueCondition.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

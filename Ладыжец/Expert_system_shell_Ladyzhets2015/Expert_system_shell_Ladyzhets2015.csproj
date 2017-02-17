@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{7F89C77C-47B0-4AC2-8861-03D3AD350A70}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Expert_system_shell_Ladyzhets2015</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <WarningLevel>4</WarningLevel>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Expert_system_shell_Ladyzhets2015.Properties/Resources.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015.Properties/Settings.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/AskedVariable.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Condition.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/ConditionComparer.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/ConditionEqualComparer.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/ConditionNotEqualComparer.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/ConsultationIO.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Container.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/DeducibleAskedVariable.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/DeducibleVariable.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/DialogFuncs.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Domains.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Enumeration.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Exposition.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Form1.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/FormClosingMethod.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/F_AddCondition.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/F_AddResolution1.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/F_consultation.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/F_domain_add.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/F_ExplanRes.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/F_rule_add.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/F_SetGoal.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/F_variable_add.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Global.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/IO.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/KnowledgeBase.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/NamedItem.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Program.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Resolution.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Rule.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/TreeViewExposition.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Value.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/Variable.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/VariableAndValueCondition.cs" />
+    <Compile Include="Expert_system_shell_Ladyzhets2015/VariableAndVariableCondition.cs" />
+    <Compile Include="Properties/AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015.Properties/Resources.resources" />
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015/Form1.resources" />
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015/F_AddCondition.resources" />
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015/F_AddResolution1.resources" />
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015/F_consultation.resources" />
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015/F_domain_add.resources" />
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015/F_ExplanRes.resources" />
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015/F_rule_add.resources" />
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015/F_SetGoal.resources" />
+    <EmbeddedResource Include="Expert_system_shell_Ladyzhets2015/F_variable_add.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

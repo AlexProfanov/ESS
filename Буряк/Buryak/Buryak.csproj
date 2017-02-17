@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FA36618B-A5D0-410F-98E3-7B17C358D7D3}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Оболочка Буряк</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties/AssemblyInfo.cs" />
+    <Compile Include="Оболочка_Буряк.Properties/Resources.cs" />
+    <Compile Include="Оболочка_Буряк.Properties/Settings.cs" />
+    <Compile Include="Оболочка_Буряк/AskedVariable.cs" />
+    <Compile Include="Оболочка_Буряк/Condition.cs" />
+    <Compile Include="Оболочка_Буряк/ConditionAGreaterBComparer.cs" />
+    <Compile Include="Оболочка_Буряк/ConditionALaterBComparer.cs" />
+    <Compile Include="Оболочка_Буряк/ConditionComparer.cs" />
+    <Compile Include="Оболочка_Буряк/ConditionEqualComparer.cs" />
+    <Compile Include="Оболочка_Буряк/ConditionNotEqualComparer.cs" />
+    <Compile Include="Оболочка_Буряк/ConsultationIO.cs" />
+    <Compile Include="Оболочка_Буряк/Container.cs" />
+    <Compile Include="Оболочка_Буряк/DeducibleAskedVariable.cs" />
+    <Compile Include="Оболочка_Буряк/DeducibleVariable.cs" />
+    <Compile Include="Оболочка_Буряк/DialogFuncs.cs" />
+    <Compile Include="Оболочка_Буряк/Enumeration.cs" />
+    <Compile Include="Оболочка_Буряк/Exposition.cs" />
+    <Compile Include="Оболочка_Буряк/Form1.cs" />
+    <Compile Include="Оболочка_Буряк/FormAddEditCondition1.cs" />
+    <Compile Include="Оболочка_Буряк/FormAddEditDomain1.cs" />
+    <Compile Include="Оболочка_Буряк/FormAddEditResolution1.cs" />
+    <Compile Include="Оболочка_Буряк/FormAddEditRule.cs" />
+    <Compile Include="Оболочка_Буряк/FormAddEditVar1.cs" />
+    <Compile Include="Оболочка_Буряк/FormClosingMethod.cs" />
+    <Compile Include="Оболочка_Буряк/FormConsultation1.cs" />
+    <Compile Include="Оболочка_Буряк/FormDomain.cs" />
+    <Compile Include="Оболочка_Буряк/FormExplanation1.cs" />
+    <Compile Include="Оболочка_Буряк/FormSetGoal1.cs" />
+    <Compile Include="Оболочка_Буряк/FormVarList1.cs" />
+    <Compile Include="Оболочка_Буряк/Global.cs" />
+    <Compile Include="Оболочка_Буряк/IO.cs" />
+    <Compile Include="Оболочка_Буряк/KnowledgeBase.cs" />
+    <Compile Include="Оболочка_Буряк/NamedItem.cs" />
+    <Compile Include="Оболочка_Буряк/Program.cs" />
+    <Compile Include="Оболочка_Буряк/Resolution.cs" />
+    <Compile Include="Оболочка_Буряк/Rule.cs" />
+    <Compile Include="Оболочка_Буряк/TreeViewExposition.cs" />
+    <Compile Include="Оболочка_Буряк/Value.cs" />
+    <Compile Include="Оболочка_Буряк/Variable.cs" />
+    <Compile Include="Оболочка_Буряк/VariableAndValueCondition.cs" />
+    <Compile Include="Оболочка_Буряк/VariableAndVariableCondition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Оболочка_Буряк.Properties/Resources.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/Form1.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormAddEditCondition1.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormAddEditDomain1.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormAddEditResolution1.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormAddEditRule.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormAddEditVar1.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormConsultation1.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormDomain.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormExplanation1.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormSetGoal1.resources" />
+    <EmbeddedResource Include="Оболочка_Буряк/FormVarList1.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

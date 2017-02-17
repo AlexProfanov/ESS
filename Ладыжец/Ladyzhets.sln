@@ -1,0 +1,20 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+   Project("{58e24925-e696-4df3-a25e-cfb9ec3c347e}") = "Expert_system_shell_Ladyzhets2015", "Expert_system_shell_Ladyzhets2015/Expert_system_shell_Ladyzhets2015.csproj", "{7f89c77c-47b0-4ac2-8861-03d3ad350a70}"
+EndProject
+Global
+GlobalSection(SolutionConfigurationPlatforms) = preSolution
+				Debug|Any CPU = Debug|Any CPU
+				Release|Any CPU = Release|Any CPU
+EndGlobalSection
+GlobalSection(ProjectConfigurationPlatforms) = postSolution
+   {7f89c77c-47b0-4ac2-8861-03d3ad350a70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+   {7f89c77c-47b0-4ac2-8861-03d3ad350a70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+   {7f89c77c-47b0-4ac2-8861-03d3ad350a70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+   {7f89c77c-47b0-4ac2-8861-03d3ad350a70}.Release|Any CPU.Build.0 = Release|Any CPU
+EndGlobalSection
+GlobalSection(MonoDevelopProperties) = preSolution
+
+EndGlobalSection
+EndGlobal
+		

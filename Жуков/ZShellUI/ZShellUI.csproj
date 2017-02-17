@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{A5176B55-1189-4444-8B76-8FB4436CA4D1}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>ZShellUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties/AssemblyInfo.cs" />
+    <Compile Include="ZShellUI.Properties/Resources.cs" />
+    <Compile Include="ZShellUI.Properties/Settings.cs" />
+    <Compile Include="ZShellUI/ConsultationIO.cs" />
+    <Compile Include="ZShellUI/DialogFuncs.cs" />
+    <Compile Include="ZShellUI/FormAddEditCondition.cs" />
+    <Compile Include="ZShellUI/FormAddEditDomain.cs" />
+    <Compile Include="ZShellUI/FormAddEditResolution.cs" />
+    <Compile Include="ZShellUI/FormAddEditVariable.cs" />
+    <Compile Include="ZShellUI/FormClosingMethod.cs" />
+    <Compile Include="ZShellUI/FormConsultation.cs" />
+    <Compile Include="ZShellUI/FormDomainList.cs" />
+    <Compile Include="ZShellUI/FormExposition.cs" />
+    <Compile Include="ZShellUI/FormMain.cs" />
+    <Compile Include="ZShellUI/FormRule.cs" />
+    <Compile Include="ZShellUI/FormSetGoal.cs" />
+    <Compile Include="ZShellUI/FormVariableList.cs" />
+    <Compile Include="ZShellUI/Program.cs" />
+    <Compile Include="ZShellUI/TreeViewExposition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ZShellUI.Properties/Resources.resources" />
+    <EmbeddedResource Include="ZShellUI/FormAddEditCondition.resources" />
+    <EmbeddedResource Include="ZShellUI/FormAddEditDomain.resources" />
+    <EmbeddedResource Include="ZShellUI/FormAddEditResolution.resources" />
+    <EmbeddedResource Include="ZShellUI/FormAddEditVariable.resources" />
+    <EmbeddedResource Include="ZShellUI/FormConsultation.resources" />
+    <EmbeddedResource Include="ZShellUI/FormDomainList.resources" />
+    <EmbeddedResource Include="ZShellUI/FormExposition.resources" />
+    <EmbeddedResource Include="ZShellUI/FormMain.resources" />
+    <EmbeddedResource Include="ZShellUI/FormRule.resources" />
+    <EmbeddedResource Include="ZShellUI/FormSetGoal.resources" />
+    <EmbeddedResource Include="ZShellUI/FormVariableList.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZShellCore\ZShellCore.csproj">
+      <Project>{3BE24142-A7C6-4991-BCA5-6FF03BE8287C}</Project>
+      <Name>ZShellCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

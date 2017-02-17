@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{47838894-29FC-4074-A9AF-6CD974F2AF56}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>ExpertSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExpertSystem.Properties/Resources.cs" />
+    <Compile Include="ExpertSystem.Properties/Settings.cs" />
+    <Compile Include="ExpertSystem/askForm.cs" />
+    <Compile Include="ExpertSystem/consForm.cs" />
+    <Compile Include="ExpertSystem/Consultation.cs" />
+    <Compile Include="ExpertSystem/domainForm.cs" />
+    <Compile Include="ExpertSystem/Expert.cs" />
+    <Compile Include="ExpertSystem/mainForm.cs" />
+    <Compile Include="ExpertSystem/Program.cs" />
+    <Compile Include="ExpertSystem/rulsetForm.cs" />
+    <Compile Include="ExpertSystem/varForm.cs" />
+    <Compile Include="ExpertSystem/varSelectForm.cs" />
+    <Compile Include="Properties/AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpertSystem.Properties/Resources.resources" />
+    <EmbeddedResource Include="ExpertSystem/askForm.resources" />
+    <EmbeddedResource Include="ExpertSystem/consForm.resources" />
+    <EmbeddedResource Include="ExpertSystem/domainForm.resources" />
+    <EmbeddedResource Include="ExpertSystem/mainForm.resources" />
+    <EmbeddedResource Include="ExpertSystem/rulsetForm.resources" />
+    <EmbeddedResource Include="ExpertSystem/varForm.resources" />
+    <EmbeddedResource Include="ExpertSystem/varSelectForm.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
