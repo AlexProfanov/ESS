@@ -62,7 +62,7 @@ namespace ZShellUI
 			this.groupBox1.TabIndex = 1;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Диалог";
-			this.listBoxDialog.Dock = 5;
+			this.listBoxDialog.Dock = (System.Windows.Forms.DockStyle)5;
 			this.listBoxDialog.FormattingEnabled = true;
 			this.listBoxDialog.ItemHeight = 16;
 			this.listBoxDialog.Location = new Point(3, 16);
@@ -110,7 +110,7 @@ namespace ZShellUI
 			base.MinimizeBox = false;
 			base.Name = "FormConsultation";
 			base.ShowInTaskbar = false;
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			this.Text = "Консультация";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);

@@ -39,12 +39,12 @@ namespace ZShellUI
 			this.panel1.SuspendLayout();
 			base.SuspendLayout();
 			this.panel1.Controls.Add(this.buttonOK);
-			this.panel1.Dock = 2;
+			this.panel1.Dock = (System.Windows.Forms.DockStyle)2;
 			this.panel1.Location = new Point(0, 386);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new Size(464, 26);
 			this.panel1.TabIndex = 0;
-			this.buttonOK.Anchor = 1;
+			this.buttonOK.Anchor = (System.Windows.Forms.AnchorStyles)1;
 			this.buttonOK.Location = new Point(185, 3);
 			this.buttonOK.Name = "buttonOK";
 			this.buttonOK.Size = new Size(73, 23);
@@ -56,7 +56,7 @@ namespace ZShellUI
 			base.Controls.Add(this.panel1);
 			this.MinimumSize = new Size(480, 450);
 			base.Name = "FormExposition";
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			this.Text = "Объяснение";
 			this.panel1.ResumeLayout(false);
 			base.ResumeLayout(false);

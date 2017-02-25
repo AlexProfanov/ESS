@@ -41,7 +41,7 @@ namespace ZShellUI
 			}
 			if (!Global.knowledgeBase.hasAnyVariables())
 			{
-				MessageBox.Show("Добавление заключения невозможно: нет объявленых переменных", "Внимание", 0, 16);
+				MessageBox.Show("Добавление заключения невозможно: нет объявленых переменных", "Внимание", 0, (System.Windows.Forms.MessageBoxIcon)16);
 			}
 			else
 			{
@@ -58,9 +58,9 @@ namespace ZShellUI
 					{
 						valueForVariable = DialogFuncs.getValueForVariable(selectedVariable.Type, this.comboBoxValue);
 					}
-					catch (FormatException var_2_C6)
+					catch (FormatException)
 					{
-						MessageBox.Show("Добавление заключения невозможно. Значение переменной должно приводиться к типу " + selectedVariable.Type.ToString(), "Ошибка", 0, 16);
+						MessageBox.Show("Добавление заключения невозможно. Значение переменной должно приводиться к типу " + selectedVariable.Type.ToString(), "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 						return;
 					}
 					Resolution resolution = new Resolution(selectedVariable, valueForVariable);
@@ -89,9 +89,9 @@ namespace ZShellUI
 				{
 					valueForVariable = DialogFuncs.getValueForVariable(selectedVariable.Type, this.comboBoxValue);
 				}
-				catch (FormatException var_2_AE)
+				catch (FormatException)
 				{
-					MessageBox.Show("Добавление заключения невозможно. Значение переменной должно приводиться к типу " + selectedVariable.Type.ToString(), "Ошибка", 0, 16);
+					MessageBox.Show("Добавление заключения невозможно. Значение переменной должно приводиться к типу " + selectedVariable.Type.ToString(), "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 					return;
 				}
 				resolution.setVariableAndValue(selectedVariable, valueForVariable);
@@ -118,9 +118,9 @@ namespace ZShellUI
 		private void FormAddEditResolution_KeyDown(object sender, KeyEventArgs e)
 		{
 			Keys keyCode = e.KeyCode;
-			if (keyCode != 13)
+			if (keyCode != (Keys)13)
 			{
-				if (keyCode == 27)
+				if (keyCode == (Keys)27)
 				{
 					this.buttonCancel_Click(this, new EventArgs());
 				}
@@ -153,7 +153,7 @@ namespace ZShellUI
 			this.toolTip = new ToolTip(this.components);
 			base.SuspendLayout();
 			this.comboBoxVariable.DropDownHeight = 400;
-			this.comboBoxVariable.DropDownStyle = 2;
+			this.comboBoxVariable.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)2;
 			this.comboBoxVariable.FormattingEnabled = true;
 			this.comboBoxVariable.IntegralHeight = false;
 			this.comboBoxVariable.Location = new Point(12, 27);
@@ -168,7 +168,7 @@ namespace ZShellUI
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Переменная";
 			this.label2.AutoSize = true;
-			this.label2.Font = new Font("Microsoft Sans Serif", 12f, 1, 3, 204);
+			this.label2.Font = new Font("Microsoft Sans Serif", 12f, (System.Drawing.FontStyle)1, (GraphicsUnit)3, 204);
 			this.label2.Location = new Point(220, 25);
 			this.label2.Name = "label2";
 			this.label2.Size = new Size(24, 20);
@@ -216,7 +216,7 @@ namespace ZShellUI
 			this.MinimumSize = new Size(482, 120);
 			base.Name = "FormAddEditResolution";
 			base.ShowInTaskbar = false;
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			base.KeyDown += new KeyEventHandler(this.FormAddEditResolution_KeyDown);
 			base.ResumeLayout(false);
 			base.PerformLayout();

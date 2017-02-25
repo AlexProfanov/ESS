@@ -104,7 +104,7 @@ namespace ZShellUI
 
 		private void openKnowledgeBase()
 		{
-			if (this.openFileDialog.ShowDialog() == 1)
+			if (this.openFileDialog.ShowDialog() == (DialogResult)1)
 			{
 				try
 				{
@@ -116,7 +116,7 @@ namespace ZShellUI
 				}
 				catch (ArgumentException ex)
 				{
-					MessageBox.Show(ex.Message, "Ошибка", 0, 16);
+					MessageBox.Show(ex.Message, "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 					Global.knowledgeBase = null;
 				}
 			}
@@ -124,7 +124,7 @@ namespace ZShellUI
 
 		private void saveKnowledgeBase()
 		{
-			if (this.saveFileDialog.ShowDialog() == 1)
+			if (this.saveFileDialog.ShowDialog() == (DialogResult)1)
 			{
 				try
 				{
@@ -133,7 +133,7 @@ namespace ZShellUI
 				}
 				catch (ArgumentException ex)
 				{
-					MessageBox.Show(ex.Message, "Ошибка", 0, 16);
+					MessageBox.Show(ex.Message, "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 					Global.knowledgeBase = null;
 				}
 			}
@@ -220,7 +220,7 @@ namespace ZShellUI
 				while (enumerator.MoveNext())
 				{
 					ListViewItem listViewItem = (ListViewItem)enumerator.Current;
-					if (MessageBox.Show("Вы действительно хотите удалить правило " + Global.knowledgeBase.getRuleAt(listViewItem.Index).Name + " ?", "Внимание", 4, 48) == 6)
+					if (MessageBox.Show("Вы действительно хотите удалить правило " + Global.knowledgeBase.getRuleAt(listViewItem.Index).Name + " ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 					{
 						Global.knowledgeBase.removeRuleAt(listViewItem.Index);
 						this.printRuleList();
@@ -257,16 +257,16 @@ namespace ZShellUI
 				{
 					if (Global.knowledgeBase.Goal.tryToGetValue())
 					{
-						MessageBox.Show(Global.knowledgeBase.Goal.ToString() + " = " + Global.knowledgeBase.Goal.Value.ToString(), "Результат консультации", 0, 64);
+						MessageBox.Show(Global.knowledgeBase.Goal.ToString() + " = " + Global.knowledgeBase.Goal.Value.ToString(), "Результат консультации", 0, (System.Windows.Forms.MessageBoxIcon)64);
 					}
 					else
 					{
-						MessageBox.Show("Цель консультации не смогла означиться", "Результат консультации", 0, 64);
+						MessageBox.Show("Цель консультации не смогла означиться", "Результат консультации", 0, (System.Windows.Forms.MessageBoxIcon)64);
 					}
 				}
 				catch (InvalidOperationException ex)
 				{
-					MessageBox.Show(ex.Message, "Ошибка выполнения", 0, 16);
+					MessageBox.Show(ex.Message, "Ошибка выполнения", 0, (System.Windows.Forms.MessageBoxIcon)16);
 				}
 			}
 		}
@@ -275,7 +275,7 @@ namespace ZShellUI
 		{
 			if (Global.knowledgeBase != null)
 			{
-				if (MessageBox.Show("Вы завершаете работу с текущей базой знаний. Хотите ее сохранить ?", "Внимание", 4, 32) == 6)
+				if (MessageBox.Show("Вы завершаете работу с текущей базой знаний. Хотите ее сохранить ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)32) == (DialogResult)6)
 				{
 					this.saveToolStripMenuItem_Click(sender, e);
 				}
@@ -288,7 +288,7 @@ namespace ZShellUI
 		{
 			if (Global.knowledgeBase != null)
 			{
-				if (MessageBox.Show("Вы завершаете работу с текущей базой знаний. Хотите ее сохранить ?", "Внимание", 4, 32) == 6)
+				if (MessageBox.Show("Вы завершаете работу с текущей базой знаний. Хотите ее сохранить ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)32) == (DialogResult)6)
 				{
 					this.saveToolStripMenuItem_Click(sender, e);
 				}
@@ -365,7 +365,7 @@ namespace ZShellUI
 
 		private void listViewRules_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				if (e.Data.GetDataPresent(typeof(ListViewItem)))
 				{
@@ -374,7 +374,7 @@ namespace ZShellUI
 					ListViewItem itemAt = this.listViewRules.GetItemAt(point.X, point.Y);
 					if (itemAt != null)
 					{
-						if (e.Effect == 2)
+						if (e.Effect == (DragDropEffects)2)
 						{
 							Global.knowledgeBase.insertRuleInto(listViewItem.Index, itemAt.Index);
 						}
@@ -393,11 +393,11 @@ namespace ZShellUI
 		private void FormMain_KeyDown(object sender, KeyEventArgs e)
 		{
 			Keys keyCode = e.KeyCode;
-			if (keyCode != 13)
+			if (keyCode != (Keys)13)
 			{
-				if (keyCode != 27)
+				if (keyCode != (Keys)27)
 				{
-					if (keyCode == 46)
+					if (keyCode == (Keys)46)
 					{
 						this.buttonRemoveRule_Click(this, new EventArgs());
 					}
@@ -459,7 +459,7 @@ namespace ZShellUI
 
 		private void listViewCondition_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				if (e.Data.GetDataPresent(typeof(ListViewItem)))
 				{
@@ -470,7 +470,7 @@ namespace ZShellUI
 					{
 						int ruleIndex = this.listViewRules.SelectedIndices[0];
 						Rule ruleAt = Global.knowledgeBase.getRuleAt(ruleIndex);
-						if (e.Effect == 2)
+						if (e.Effect == (DragDropEffects)2)
 						{
 							ruleAt.insertConditionInto(listViewItem.Index, itemAt.Index);
 						}
@@ -496,7 +496,7 @@ namespace ZShellUI
 
 		private void listViewResolution_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				if (e.Data.GetDataPresent(typeof(ListViewItem)))
 				{
@@ -507,7 +507,7 @@ namespace ZShellUI
 					{
 						int ruleIndex = this.listViewRules.SelectedIndices[0];
 						Rule ruleAt = Global.knowledgeBase.getRuleAt(ruleIndex);
-						if (e.Effect == 2)
+						if (e.Effect == (DragDropEffects)2)
 						{
 							ruleAt.insertResolutionInto(listViewItem.Index, itemAt.Index);
 						}
@@ -651,7 +651,7 @@ namespace ZShellUI
 			this.saveFileDialog.Filter = "Binary files|*.bin";
 			this.openFileDialog.DefaultExt = "bin";
 			this.openFileDialog.Filter = "Binary files|*.bin";
-			this.buttonRemoveRule.Anchor = 6;
+			this.buttonRemoveRule.Anchor = (System.Windows.Forms.AnchorStyles)6;
 			this.buttonRemoveRule.Location = new Point(256, 530);
 			this.buttonRemoveRule.Name = "buttonRemoveRule";
 			this.buttonRemoveRule.Size = new Size(110, 23);
@@ -660,7 +660,7 @@ namespace ZShellUI
 			this.buttonRemoveRule.UseVisualStyleBackColor = true;
 			this.buttonRemoveRule.Visible = false;
 			this.buttonRemoveRule.Click += new EventHandler(this.buttonRemoveRule_Click);
-			this.buttonEditRule.Anchor = 6;
+			this.buttonEditRule.Anchor = (System.Windows.Forms.AnchorStyles)6;
 			this.buttonEditRule.Location = new Point(140, 530);
 			this.buttonEditRule.Name = "buttonEditRule";
 			this.buttonEditRule.Size = new Size(110, 23);
@@ -669,7 +669,7 @@ namespace ZShellUI
 			this.buttonEditRule.UseVisualStyleBackColor = true;
 			this.buttonEditRule.Visible = false;
 			this.buttonEditRule.Click += new EventHandler(this.buttonEditRule_Click);
-			this.buttonAddRule.Anchor = 6;
+			this.buttonAddRule.Anchor = (System.Windows.Forms.AnchorStyles)6;
 			this.buttonAddRule.Location = new Point(24, 530);
 			this.buttonAddRule.Name = "buttonAddRule";
 			this.buttonAddRule.Size = new Size(110, 23);
@@ -679,7 +679,7 @@ namespace ZShellUI
 			this.buttonAddRule.Visible = false;
 			this.buttonAddRule.Click += new EventHandler(this.buttonAddRule_Click);
 			this.listViewRules.AllowDrop = true;
-			this.listViewRules.Anchor = 15;
+			this.listViewRules.Anchor = (System.Windows.Forms.AnchorStyles)15;
 			this.listViewRules.Columns.AddRange(new ColumnHeader[]
 			{
 				this.columnHeaderName,
@@ -688,7 +688,7 @@ namespace ZShellUI
 			this.listViewRules.ForeColor = Color.DarkBlue;
 			this.listViewRules.FullRowSelect = true;
 			this.listViewRules.GridLines = true;
-			this.listViewRules.HeaderStyle = 1;
+			this.listViewRules.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewRules.HideSelection = false;
 			this.listViewRules.Location = new Point(0, 27);
 			this.listViewRules.MultiSelect = false;
@@ -696,7 +696,7 @@ namespace ZShellUI
 			this.listViewRules.Size = new Size(418, 494);
 			this.listViewRules.TabIndex = 2;
 			this.listViewRules.UseCompatibleStateImageBehavior = false;
-			this.listViewRules.View = 1;
+			this.listViewRules.View = (System.Windows.Forms.View)1;
 			this.listViewRules.Visible = false;
 			this.listViewRules.ItemDrag += new ItemDragEventHandler(this.listViewRules_ItemDrag);
 			this.listViewRules.SelectedIndexChanged += new EventHandler(this.listViewRules_SelectedIndexChanged);
@@ -707,7 +707,7 @@ namespace ZShellUI
 			this.columnHeaderName.Width = 80;
 			this.columnHeaderRule.Text = "Содержание";
 			this.columnHeaderRule.Width = 800;
-			this.buttonClose.Anchor = 10;
+			this.buttonClose.Anchor = (System.Windows.Forms.AnchorStyles)10;
 			this.buttonClose.Location = new Point(519, 530);
 			this.buttonClose.Name = "buttonClose";
 			this.buttonClose.Size = new Size(110, 23);
@@ -716,7 +716,7 @@ namespace ZShellUI
 			this.buttonClose.UseVisualStyleBackColor = true;
 			this.buttonClose.Visible = false;
 			this.buttonClose.Click += new EventHandler(this.buttonClose_Click);
-			this.groupBox2.Anchor = 11;
+			this.groupBox2.Anchor = (System.Windows.Forms.AnchorStyles)11;
 			this.groupBox2.Controls.Add(this.splitContainer1);
 			this.groupBox2.Location = new Point(424, 27);
 			this.groupBox2.Name = "groupBox2";
@@ -725,7 +725,7 @@ namespace ZShellUI
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Текущее правило";
 			this.groupBox2.Visible = false;
-			this.splitContainer1.Dock = 5;
+			this.splitContainer1.Dock = (System.Windows.Forms.DockStyle)5;
 			this.splitContainer1.Location = new Point(3, 16);
 			this.splitContainer1.Name = "splitContainer1";
 			this.splitContainer1.Orientation = 0;
@@ -739,11 +739,11 @@ namespace ZShellUI
 			{
 				this.columnHeader1
 			});
-			this.listViewCondition.Dock = 5;
+			this.listViewCondition.Dock = (System.Windows.Forms.DockStyle)5;
 			this.listViewCondition.ForeColor = Color.DarkBlue;
 			this.listViewCondition.FullRowSelect = true;
 			this.listViewCondition.GridLines = true;
-			this.listViewCondition.HeaderStyle = 1;
+			this.listViewCondition.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewCondition.HideSelection = false;
 			this.listViewCondition.Location = new Point(0, 0);
 			this.listViewCondition.MultiSelect = false;
@@ -751,7 +751,7 @@ namespace ZShellUI
 			this.listViewCondition.Size = new Size(304, 217);
 			this.listViewCondition.TabIndex = 1;
 			this.listViewCondition.UseCompatibleStateImageBehavior = false;
-			this.listViewCondition.View = 1;
+			this.listViewCondition.View = (System.Windows.Forms.View)1;
 			this.listViewCondition.ItemDrag += new ItemDragEventHandler(this.listViewCondition_ItemDrag);
 			this.listViewCondition.DragDrop += new DragEventHandler(this.listViewCondition_DragDrop);
 			this.listViewCondition.DragOver += new DragEventHandler(this.listViewCondition_DragOver);
@@ -762,11 +762,11 @@ namespace ZShellUI
 			{
 				this.columnHeader2
 			});
-			this.listViewResolution.Dock = 5;
+			this.listViewResolution.Dock = (System.Windows.Forms.DockStyle)5;
 			this.listViewResolution.ForeColor = Color.DarkBlue;
 			this.listViewResolution.FullRowSelect = true;
 			this.listViewResolution.GridLines = true;
-			this.listViewResolution.HeaderStyle = 1;
+			this.listViewResolution.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewResolution.HideSelection = false;
 			this.listViewResolution.Location = new Point(0, 0);
 			this.listViewResolution.MultiSelect = false;
@@ -774,7 +774,7 @@ namespace ZShellUI
 			this.listViewResolution.Size = new Size(304, 257);
 			this.listViewResolution.TabIndex = 1;
 			this.listViewResolution.UseCompatibleStateImageBehavior = false;
-			this.listViewResolution.View = 1;
+			this.listViewResolution.View = (System.Windows.Forms.View)1;
 			this.listViewResolution.ItemDrag += new ItemDragEventHandler(this.listViewResolution_ItemDrag);
 			this.listViewResolution.DragDrop += new DragEventHandler(this.listViewResolution_DragDrop);
 			this.listViewResolution.DragOver += new DragEventHandler(this.listViewResolution_DragOver);
@@ -792,7 +792,7 @@ namespace ZShellUI
 			base.MainMenuStrip = this.menuStrip;
 			this.MinimumSize = new Size(750, 600);
 			base.Name = "FormMain";
-			base.StartPosition = 1;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)1;
 			this.Text = "ZShell";
 			base.KeyDown += new KeyEventHandler(this.FormMain_KeyDown);
 			this.menuStrip.ResumeLayout(false);

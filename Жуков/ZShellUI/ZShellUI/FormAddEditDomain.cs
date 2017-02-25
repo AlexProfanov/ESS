@@ -45,7 +45,7 @@ namespace ZShellUI
 		public FormAddEditDomain()
 		{
 			this.InitializeComponent();
-			this.buttonOK.DialogResult = 1;
+			this.buttonOK.DialogResult = (System.Windows.Forms.DialogResult)1;
 			this.textBoxValue.Focus();
 		}
 
@@ -67,7 +67,7 @@ namespace ZShellUI
 				this.domainToEdit.DomainType = this.getSelectedType();
 				if (this.domainToEdit.getAllowedValuesCount() == 0)
 				{
-					MessageBox.Show("Этот домен не имеет допустимых значений", "Ошибка", 0, 16);
+					MessageBox.Show("Этот домен не имеет допустимых значений", "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 				}
 				else
 				{
@@ -81,7 +81,7 @@ namespace ZShellUI
 					}
 					catch (ArgumentException ex)
 					{
-						MessageBox.Show("Добавление домена невозможно:\n" + ex.Message, "Ошибка", 0, 16);
+						MessageBox.Show("Добавление домена невозможно:\n" + ex.Message, "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 					}
 				}
 			}
@@ -103,13 +103,13 @@ namespace ZShellUI
 				this.domainToEdit.Name = this.textBoxName.Text;
 				if (domain.Name != this.domainToEdit.Name && Global.knowledgeBase.containsEnumerationName(this.domainToEdit.Name))
 				{
-					MessageBox.Show("Изменение домена невозможно:\nБаза знаний уже содержит домен с таким именем", "Ошибка", 0, 16);
+					MessageBox.Show("Изменение домена невозможно:\nБаза знаний уже содержит домен с таким именем", "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 				}
 				else if (this.domainToEdit.getAllowedValuesCount() == 0)
 				{
-					MessageBox.Show("Этот домен не имеет допустимых значений", "Ошибка", 0, 16);
+					MessageBox.Show("Этот домен не имеет допустимых значений", "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 				}
-				else if (!domain.hasTheSameValues(this.domainToEdit) && MessageBox.Show("Множество допустимых значений домена изменилось. Если условие/заключение правила использовало удаленное значение домена, то условие/заключение будет удалено из правила. Хотите ли вы создать новый домен и при этом избежать возможных изменений?", "Внимание", 4, 32) == 6)
+				else if (!domain.hasTheSameValues(this.domainToEdit) && MessageBox.Show("Множество допустимых значений домена изменилось. Если условие/заключение правила использовало удаленное значение домена, то условие/заключение будет удалено из правила. Хотите ли вы создать новый домен и при этом избежать возможных изменений?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)32) == (DialogResult)6)
 				{
 					this.domainToEdit.Name = Global.knowledgeBase.UniqueDomainName;
 					this.addDomainWithSavingContext(-1);
@@ -184,13 +184,13 @@ namespace ZShellUI
 				this.domainToEdit.addValue(value);
 				this.printAllowedValueList(this.domainToEdit, this.listViewAllowedValues);
 			}
-			catch (FormatException var_3_DD)
+			catch (FormatException)
 			{
-				MessageBox.Show("Добавление невозможно. Значение указано в неверном формате", "Ошибка", 0, 16);
+				MessageBox.Show("Добавление невозможно. Значение указано в неверном формате", "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 			}
 			catch (ArgumentException ex)
 			{
-				MessageBox.Show("Добавление невозможно.\n" + ex.Message, "Ошибка", 0, 16);
+				MessageBox.Show("Добавление невозможно.\n" + ex.Message, "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 			}
 			this.textBoxValue.Text = "";
 			this.textBoxValue.Focus();
@@ -227,9 +227,9 @@ namespace ZShellUI
 						}
 						this.domainToEdit.replaceValueAt(valueIndex, newValue);
 					}
-					catch (FormatException var_4_F1)
+					catch (FormatException)
 					{
-						MessageBox.Show("Добавление невозможно. Значение указано в неверном формате", "Ошибка", 0, 16);
+						MessageBox.Show("Добавление невозможно. Значение указано в неверном формате", "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 					}
 					this.textBoxValue.Text = "";
 					this.printAllowedValueList(this.domainToEdit, this.listViewAllowedValues);
@@ -303,7 +303,7 @@ namespace ZShellUI
 
 		private void listViewAllowedValues_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				if (e.Data.GetDataPresent(typeof(ListViewItem)))
 				{
@@ -312,7 +312,7 @@ namespace ZShellUI
 					ListViewItem itemAt = this.listViewAllowedValues.GetItemAt(point.X, point.Y);
 					if (itemAt != null)
 					{
-						if (e.Effect == 2)
+						if (e.Effect == (DragDropEffects)2)
 						{
 							this.domainToEdit.insertValueInto(listViewItem.Index, itemAt.Index);
 						}
@@ -325,9 +325,9 @@ namespace ZShellUI
 		private void FormAddEditDomain_KeyDown(object sender, KeyEventArgs e)
 		{
 			Keys keyCode = e.KeyCode;
-			if (keyCode != 13)
+			if (keyCode != (Keys)13)
 			{
-				if (keyCode == 27)
+				if (keyCode == (Keys)27)
 				{
 					this.buttonCancel_Click(this, new EventArgs());
 				}
@@ -414,7 +414,7 @@ namespace ZShellUI
 			this.listViewAllowedValues.ForeColor = Color.DarkBlue;
 			this.listViewAllowedValues.FullRowSelect = true;
 			this.listViewAllowedValues.GridLines = true;
-			this.listViewAllowedValues.HeaderStyle = 1;
+			this.listViewAllowedValues.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewAllowedValues.HideSelection = false;
 			this.listViewAllowedValues.Location = new Point(6, 19);
 			this.listViewAllowedValues.MultiSelect = false;
@@ -422,7 +422,7 @@ namespace ZShellUI
 			this.listViewAllowedValues.Size = new Size(316, 163);
 			this.listViewAllowedValues.TabIndex = 1;
 			this.listViewAllowedValues.UseCompatibleStateImageBehavior = false;
-			this.listViewAllowedValues.View = 1;
+			this.listViewAllowedValues.View = (System.Windows.Forms.View)1;
 			this.listViewAllowedValues.ItemDrag += new ItemDragEventHandler(this.listViewAllowedValues_ItemDrag);
 			this.listViewAllowedValues.Click += new EventHandler(this.listViewAllowedValues_Click);
 			this.listViewAllowedValues.DragDrop += new DragEventHandler(this.listViewAllowedValues_DragDrop);
@@ -485,7 +485,7 @@ namespace ZShellUI
 			this.MinimumSize = new Size(380, 410);
 			base.Name = "FormAddEditDomain";
 			base.ShowInTaskbar = false;
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			base.KeyDown += new KeyEventHandler(this.FormAddEditDomain_KeyDown);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);

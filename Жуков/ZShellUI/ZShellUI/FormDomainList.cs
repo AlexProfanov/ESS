@@ -128,7 +128,7 @@ namespace ZShellUI
 				while (enumerator.MoveNext())
 				{
 					int enumerationIndex = (int)enumerator.Current;
-					if (MessageBox.Show("Вы действительно хотите удалить домен с именем " + Global.knowledgeBase.getEnumerationAt(enumerationIndex) + " ?.\nЭтот домен будет удален из всех переменных, которые на него ссылаются.\nКроме того, будут удалены все условия и заключения, которые используют его значения.", "Внимание", 4, 32) == 6)
+					if (MessageBox.Show("Вы действительно хотите удалить домен с именем " + Global.knowledgeBase.getEnumerationAt(enumerationIndex) + " ?.\nЭтот домен будет удален из всех переменных, которые на него ссылаются.\nКроме того, будут удалены все условия и заключения, которые используют его значения.", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)32) == (DialogResult)6)
 					{
 						Global.knowledgeBase.removeEnumerationAt(enumerationIndex);
 						this.printDomainList();
@@ -187,7 +187,7 @@ namespace ZShellUI
 
 		private void listViewDomain_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				if (e.Data.GetDataPresent(typeof(ListViewItem)))
 				{
@@ -196,7 +196,7 @@ namespace ZShellUI
 					ListViewItem itemAt = this.listViewDomain.GetItemAt(point.X, point.Y);
 					if (itemAt != null)
 					{
-						if (e.Effect == 2)
+						if (e.Effect == (DragDropEffects)2)
 						{
 							Global.knowledgeBase.insertDomainInto(listViewItem.Index, itemAt.Index);
 						}
@@ -220,7 +220,7 @@ namespace ZShellUI
 
 		private void listViewAllowedValues_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				if (e.Data.GetDataPresent(typeof(ListViewItem)))
 				{
@@ -233,7 +233,7 @@ namespace ZShellUI
 						Enumeration enumerationAt = Global.knowledgeBase.getEnumerationAt(num);
 						if (itemAt != null)
 						{
-							if (e.Effect == 2)
+							if (e.Effect == (DragDropEffects)2)
 							{
 								enumerationAt.insertValueInto(listViewItem.Index, itemAt.Index);
 							}
@@ -252,11 +252,11 @@ namespace ZShellUI
 		private void FormDomainList_KeyDown(object sender, KeyEventArgs e)
 		{
 			Keys keyCode = e.KeyCode;
-			if (keyCode != 13)
+			if (keyCode != (Keys)13)
 			{
-				if (keyCode != 27)
+				if (keyCode != (Keys)27)
 				{
-					if (keyCode == 46)
+					if (keyCode == (Keys)46)
 					{
 						this.buttonRemoveDomain_Click(this, new EventArgs());
 					}
@@ -299,7 +299,7 @@ namespace ZShellUI
 			this.toolTip = new ToolTip(this.components);
 			this.groupBoxInfo.SuspendLayout();
 			base.SuspendLayout();
-			this.buttonExit.Anchor = 10;
+			this.buttonExit.Anchor = (System.Windows.Forms.AnchorStyles)10;
 			this.buttonExit.Location = new Point(466, 407);
 			this.buttonExit.Name = "buttonExit";
 			this.buttonExit.Size = new Size(105, 23);
@@ -307,7 +307,7 @@ namespace ZShellUI
 			this.buttonExit.Text = "Закрыть";
 			this.buttonExit.UseVisualStyleBackColor = true;
 			this.buttonExit.Click += new EventHandler(this.buttonExit_Click);
-			this.groupBoxInfo.Anchor = 11;
+			this.groupBoxInfo.Anchor = (System.Windows.Forms.AnchorStyles)11;
 			this.groupBoxInfo.Controls.Add(this.listViewAllowedValues);
 			this.groupBoxInfo.Location = new Point(392, 0);
 			this.groupBoxInfo.Name = "groupBoxInfo";
@@ -322,11 +322,11 @@ namespace ZShellUI
 				this.columnHeaderN,
 				this.columnHeaderValue
 			});
-			this.listViewAllowedValues.Dock = 5;
+			this.listViewAllowedValues.Dock = (System.Windows.Forms.DockStyle)5;
 			this.listViewAllowedValues.ForeColor = Color.DarkBlue;
 			this.listViewAllowedValues.FullRowSelect = true;
 			this.listViewAllowedValues.GridLines = true;
-			this.listViewAllowedValues.HeaderStyle = 1;
+			this.listViewAllowedValues.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewAllowedValues.HideSelection = false;
 			this.listViewAllowedValues.Location = new Point(3, 16);
 			this.listViewAllowedValues.MultiSelect = false;
@@ -334,7 +334,7 @@ namespace ZShellUI
 			this.listViewAllowedValues.Size = new Size(253, 382);
 			this.listViewAllowedValues.TabIndex = 5;
 			this.listViewAllowedValues.UseCompatibleStateImageBehavior = false;
-			this.listViewAllowedValues.View = 1;
+			this.listViewAllowedValues.View = (System.Windows.Forms.View)1;
 			this.listViewAllowedValues.ItemDrag += new ItemDragEventHandler(this.listViewAllowedValues_ItemDrag);
 			this.listViewAllowedValues.DragDrop += new DragEventHandler(this.listViewAllowedValues_DragDrop);
 			this.listViewAllowedValues.DragOver += new DragEventHandler(this.listViewAllowedValues_DragOver);
@@ -342,7 +342,7 @@ namespace ZShellUI
 			this.columnHeaderN.Width = 40;
 			this.columnHeaderValue.Text = "Значение";
 			this.columnHeaderValue.Width = 200;
-			this.buttonEditDomain.Anchor = 6;
+			this.buttonEditDomain.Anchor = (System.Windows.Forms.AnchorStyles)6;
 			this.buttonEditDomain.Location = new Point(150, 407);
 			this.buttonEditDomain.Name = "buttonEditDomain";
 			this.buttonEditDomain.Size = new Size(105, 23);
@@ -350,7 +350,7 @@ namespace ZShellUI
 			this.buttonEditDomain.Text = "Редактировать";
 			this.buttonEditDomain.UseVisualStyleBackColor = true;
 			this.buttonEditDomain.Click += new EventHandler(this.buttonEditDomain_Click);
-			this.buttonRemoveDomain.Anchor = 6;
+			this.buttonRemoveDomain.Anchor = (System.Windows.Forms.AnchorStyles)6;
 			this.buttonRemoveDomain.Location = new Point(261, 407);
 			this.buttonRemoveDomain.Name = "buttonRemoveDomain";
 			this.buttonRemoveDomain.Size = new Size(105, 23);
@@ -358,7 +358,7 @@ namespace ZShellUI
 			this.buttonRemoveDomain.Text = "Удалить";
 			this.buttonRemoveDomain.UseVisualStyleBackColor = true;
 			this.buttonRemoveDomain.Click += new EventHandler(this.buttonRemoveDomain_Click);
-			this.buttonAddDomain.Anchor = 6;
+			this.buttonAddDomain.Anchor = (System.Windows.Forms.AnchorStyles)6;
 			this.buttonAddDomain.Location = new Point(39, 407);
 			this.buttonAddDomain.Name = "buttonAddDomain";
 			this.buttonAddDomain.Size = new Size(105, 23);
@@ -367,7 +367,7 @@ namespace ZShellUI
 			this.buttonAddDomain.UseVisualStyleBackColor = true;
 			this.buttonAddDomain.Click += new EventHandler(this.buttonAddDomain_Click);
 			this.listViewDomain.AllowDrop = true;
-			this.listViewDomain.Anchor = 15;
+			this.listViewDomain.Anchor = (System.Windows.Forms.AnchorStyles)15;
 			this.listViewDomain.Columns.AddRange(new ColumnHeader[]
 			{
 				this.columnHeader1,
@@ -376,7 +376,7 @@ namespace ZShellUI
 			this.listViewDomain.ForeColor = Color.DarkBlue;
 			this.listViewDomain.FullRowSelect = true;
 			this.listViewDomain.GridLines = true;
-			this.listViewDomain.HeaderStyle = 1;
+			this.listViewDomain.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewDomain.HideSelection = false;
 			this.listViewDomain.Location = new Point(0, 0);
 			this.listViewDomain.MultiSelect = false;
@@ -384,7 +384,7 @@ namespace ZShellUI
 			this.listViewDomain.Size = new Size(389, 401);
 			this.listViewDomain.TabIndex = 0;
 			this.listViewDomain.UseCompatibleStateImageBehavior = false;
-			this.listViewDomain.View = 1;
+			this.listViewDomain.View = (System.Windows.Forms.View)1;
 			this.listViewDomain.ItemDrag += new ItemDragEventHandler(this.listViewDomain_ItemDrag);
 			this.listViewDomain.SelectedIndexChanged += new EventHandler(this.listViewDomain_SelectedIndexChanged);
 			this.listViewDomain.DragDrop += new DragEventHandler(this.listViewDomain_DragDrop);
@@ -405,7 +405,7 @@ namespace ZShellUI
 			this.MinimumSize = new Size(670, 480);
 			base.Name = "FormDomainList";
 			base.ShowInTaskbar = false;
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			this.Text = "Список доменов";
 			base.KeyDown += new KeyEventHandler(this.FormDomainList_KeyDown);
 			this.groupBoxInfo.ResumeLayout(false);

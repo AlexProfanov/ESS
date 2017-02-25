@@ -29,7 +29,7 @@ namespace ZShellUI
 		{
 			if (!Global.knowledgeBase.hasAnyVariables())
 			{
-				MessageBox.Show("Задание цели: нет объявленых переменных", "Внимание", 0, 16);
+				MessageBox.Show("Задание цели: нет объявленых переменных", "Внимание", 0, (System.Windows.Forms.MessageBoxIcon)16);
 			}
 			else
 			{
@@ -61,9 +61,9 @@ namespace ZShellUI
 		private void FormSetGoal_KeyDown(object sender, KeyEventArgs e)
 		{
 			Keys keyCode = e.KeyCode;
-			if (keyCode != 13)
+			if (keyCode != (Keys)13)
 			{
-				if (keyCode == 27)
+				if (keyCode == (Keys)27)
 				{
 					this.buttonCancel_Click(this, new EventArgs());
 				}
@@ -91,7 +91,7 @@ namespace ZShellUI
 			this.buttonCancel = new Button();
 			base.SuspendLayout();
 			this.comboBoxGoals.DropDownHeight = 400;
-			this.comboBoxGoals.DropDownStyle = 2;
+			this.comboBoxGoals.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)2;
 			this.comboBoxGoals.FormattingEnabled = true;
 			this.comboBoxGoals.IntegralHeight = false;
 			this.comboBoxGoals.Location = new Point(12, 25);
@@ -129,7 +129,7 @@ namespace ZShellUI
 			this.MinimumSize = new Size(240, 120);
 			base.Name = "FormSetGoal";
 			base.ShowInTaskbar = false;
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			this.Text = "Задание цели консультации";
 			base.KeyDown += new KeyEventHandler(this.FormSetGoal_KeyDown);
 			base.ResumeLayout(false);
