@@ -27,39 +27,39 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Properties/AssemblyInfo.cs" />
-    <Compile Include="ZShellUI.Properties/Resources.cs" />
-    <Compile Include="ZShellUI.Properties/Settings.cs" />
-    <Compile Include="ZShellUI/ConsultationIO.cs" />
-    <Compile Include="ZShellUI/DialogFuncs.cs" />
-    <Compile Include="ZShellUI/FormAddEditCondition.cs" />
-    <Compile Include="ZShellUI/FormAddEditDomain.cs" />
-    <Compile Include="ZShellUI/FormAddEditResolution.cs" />
-    <Compile Include="ZShellUI/FormAddEditVariable.cs" />
-    <Compile Include="ZShellUI/FormClosingMethod.cs" />
-    <Compile Include="ZShellUI/FormConsultation.cs" />
-    <Compile Include="ZShellUI/FormDomainList.cs" />
-    <Compile Include="ZShellUI/FormExposition.cs" />
-    <Compile Include="ZShellUI/FormMain.cs" />
-    <Compile Include="ZShellUI/FormRule.cs" />
-    <Compile Include="ZShellUI/FormSetGoal.cs" />
-    <Compile Include="ZShellUI/FormVariableList.cs" />
-    <Compile Include="ZShellUI/Program.cs" />
-    <Compile Include="ZShellUI/TreeViewExposition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZShellUI.Properties\Resources.cs" />
+    <Compile Include="ZShellUI.Properties\Settings.cs" />
+    <Compile Include="ZShellUI\ConsultationIO.cs" />
+    <Compile Include="ZShellUI\DialogFuncs.cs" />
+    <Compile Include="ZShellUI\FormAddEditCondition.cs" />
+    <Compile Include="ZShellUI\FormAddEditDomain.cs" />
+    <Compile Include="ZShellUI\FormAddEditResolution.cs" />
+    <Compile Include="ZShellUI\FormAddEditVariable.cs" />
+    <Compile Include="ZShellUI\FormClosingMethod.cs" />
+    <Compile Include="ZShellUI\FormConsultation.cs" />
+    <Compile Include="ZShellUI\FormDomainList.cs" />
+    <Compile Include="ZShellUI\FormExposition.cs" />
+    <Compile Include="ZShellUI\FormMain.cs" />
+    <Compile Include="ZShellUI\FormRule.cs" />
+    <Compile Include="ZShellUI\FormSetGoal.cs" />
+    <Compile Include="ZShellUI\FormVariableList.cs" />
+    <Compile Include="ZShellUI\Program.cs" />
+    <Compile Include="ZShellUI\TreeViewExposition.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ZShellUI.Properties/Resources.resources" />
-    <EmbeddedResource Include="ZShellUI/FormAddEditCondition.resources" />
-    <EmbeddedResource Include="ZShellUI/FormAddEditDomain.resources" />
-    <EmbeddedResource Include="ZShellUI/FormAddEditResolution.resources" />
-    <EmbeddedResource Include="ZShellUI/FormAddEditVariable.resources" />
-    <EmbeddedResource Include="ZShellUI/FormConsultation.resources" />
-    <EmbeddedResource Include="ZShellUI/FormDomainList.resources" />
-    <EmbeddedResource Include="ZShellUI/FormExposition.resources" />
-    <EmbeddedResource Include="ZShellUI/FormMain.resources" />
-    <EmbeddedResource Include="ZShellUI/FormRule.resources" />
-    <EmbeddedResource Include="ZShellUI/FormSetGoal.resources" />
-    <EmbeddedResource Include="ZShellUI/FormVariableList.resources" />
+    <EmbeddedResource Include="ZShellUI.Properties\Resources.resources" />
+    <EmbeddedResource Include="ZShellUI\FormAddEditCondition.resources" />
+    <EmbeddedResource Include="ZShellUI\FormAddEditDomain.resources" />
+    <EmbeddedResource Include="ZShellUI\FormAddEditResolution.resources" />
+    <EmbeddedResource Include="ZShellUI\FormAddEditVariable.resources" />
+    <EmbeddedResource Include="ZShellUI\FormConsultation.resources" />
+    <EmbeddedResource Include="ZShellUI\FormDomainList.resources" />
+    <EmbeddedResource Include="ZShellUI\FormExposition.resources" />
+    <EmbeddedResource Include="ZShellUI\FormMain.resources" />
+    <EmbeddedResource Include="ZShellUI\FormRule.resources" />
+    <EmbeddedResource Include="ZShellUI\FormSetGoal.resources" />
+    <EmbeddedResource Include="ZShellUI\FormVariableList.resources" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZShellCore\ZShellCore.csproj">

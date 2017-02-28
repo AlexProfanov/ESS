@@ -31,25 +31,25 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties/AssemblyInfo.cs" />
-    <Compile Include="ZShellCore/AskedVariable.cs" />
-    <Compile Include="ZShellCore/Condition.cs" />
-    <Compile Include="ZShellCore/ConditionComparer.cs" />
-    <Compile Include="ZShellCore/ConditionEqualComparer.cs" />
-    <Compile Include="ZShellCore/Container.cs" />
-    <Compile Include="ZShellCore/DeducibleAskedVariable.cs" />
-    <Compile Include="ZShellCore/DeducibleVariable.cs" />
-    <Compile Include="ZShellCore/Enumeration.cs" />
-    <Compile Include="ZShellCore/Exposition.cs" />
-    <Compile Include="ZShellCore/Global.cs" />
-    <Compile Include="ZShellCore/IO.cs" />
-    <Compile Include="ZShellCore/KnowledgeBase.cs" />
-    <Compile Include="ZShellCore/NamedItem.cs" />
-    <Compile Include="ZShellCore/Resolution.cs" />
-    <Compile Include="ZShellCore/Rule.cs" />
-    <Compile Include="ZShellCore/Value.cs" />
-    <Compile Include="ZShellCore/Variable.cs" />
-    <Compile Include="ZShellCore/VariableAndValueCondition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZShellCore\AskedVariable.cs" />
+    <Compile Include="ZShellCore\Condition.cs" />
+    <Compile Include="ZShellCore\ConditionComparer.cs" />
+    <Compile Include="ZShellCore\ConditionEqualComparer.cs" />
+    <Compile Include="ZShellCore\Container.cs" />
+    <Compile Include="ZShellCore\DeducibleAskedVariable.cs" />
+    <Compile Include="ZShellCore\DeducibleVariable.cs" />
+    <Compile Include="ZShellCore\Enumeration.cs" />
+    <Compile Include="ZShellCore\Exposition.cs" />
+    <Compile Include="ZShellCore\Global.cs" />
+    <Compile Include="ZShellCore\IO.cs" />
+    <Compile Include="ZShellCore\KnowledgeBase.cs" />
+    <Compile Include="ZShellCore\NamedItem.cs" />
+    <Compile Include="ZShellCore\Resolution.cs" />
+    <Compile Include="ZShellCore\Rule.cs" />
+    <Compile Include="ZShellCore\Value.cs" />
+    <Compile Include="ZShellCore\Variable.cs" />
+    <Compile Include="ZShellCore\VariableAndValueCondition.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
