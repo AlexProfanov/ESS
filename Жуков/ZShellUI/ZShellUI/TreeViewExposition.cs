@@ -47,7 +47,7 @@ namespace ZShellUI
 			this.formExposition = new FormExposition();
 			this.formExposition.Controls.Add(this.treeNode);
 			this.treeNode.ExpandAll();
-			this.treeNode.Dock = 5;
+			this.treeNode.Dock = (System.Windows.Forms.DockStyle)5;
 			this.formExposition.ShowDialog();
 		}
 	}

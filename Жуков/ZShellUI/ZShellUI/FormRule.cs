@@ -79,7 +79,7 @@ namespace ZShellUI
 				}
 				catch (ArgumentException ex)
 				{
-					MessageBox.Show("Добавление невозможно:\n" + ex.Message, "Ошибка", 0, 16);
+					MessageBox.Show("Добавление невозможно:\n" + ex.Message, "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 				}
 			}
 		}
@@ -160,7 +160,7 @@ namespace ZShellUI
 			}
 			else
 			{
-				MessageBox.Show("Имя правила не может быть изменено.\nПравило с таким именем уже есть в базе знаний.", "Ошибка", 0, 16);
+				MessageBox.Show("Имя правила не может быть изменено.\nПравило с таким именем уже есть в базе знаний.", "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 			}
 		}
 
@@ -201,7 +201,7 @@ namespace ZShellUI
 				while (enumerator.MoveNext())
 				{
 					int conditionIndex = (int)enumerator.Current;
-					if (MessageBox.Show("Вы действительно хотите удалить условие " + this.ruleForEditing.getConditionAt(conditionIndex).ToString() + " ?", "Внимание", 1, 48) == 1)
+					if (MessageBox.Show("Вы действительно хотите удалить условие " + this.ruleForEditing.getConditionAt(conditionIndex).ToString() + " ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)1, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)1)
 					{
 						this.ruleForEditing.removeCondition(this.ruleForEditing.getConditionAt(conditionIndex));
 						this.printConditionList();
@@ -256,7 +256,7 @@ namespace ZShellUI
 				while (enumerator.MoveNext())
 				{
 					int resolutionIndex = (int)enumerator.Current;
-					if (MessageBox.Show("Вы действительно хотите удалить закдючение " + this.ruleForEditing.getResolutionAt(resolutionIndex).ToString() + " ?", "Внимание", 1, 48) == 1)
+					if (MessageBox.Show("Вы действительно хотите удалить закдючение " + this.ruleForEditing.getResolutionAt(resolutionIndex).ToString() + " ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)1, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)1)
 					{
 						this.ruleForEditing.removeResolution(this.ruleForEditing.getResolutionAt(resolutionIndex));
 						this.printResolutionList();
@@ -293,14 +293,14 @@ namespace ZShellUI
 
 		private void listViewCondition_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				ListViewItem listViewItem = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
 				Point point = this.listViewCondition.PointToClient(new Point(e.X, e.Y));
 				ListViewItem itemAt = this.listViewCondition.GetItemAt(point.X, point.Y);
 				if (itemAt != null)
 				{
-					if (e.Effect == 2)
+					if (e.Effect == (DragDropEffects)2)
 					{
 						this.ruleForEditing.insertConditionInto(listViewItem.Index, itemAt.Index);
 					}
@@ -323,14 +323,14 @@ namespace ZShellUI
 
 		private void listViewResolution_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				ListViewItem listViewItem = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
 				Point point = this.listViewResolution.PointToClient(new Point(e.X, e.Y));
 				ListViewItem itemAt = this.listViewResolution.GetItemAt(point.X, point.Y);
 				if (itemAt != null)
 				{
-					if (e.Effect == 2)
+					if (e.Effect == (DragDropEffects)2)
 					{
 						this.ruleForEditing.insertResolutionInto(listViewItem.Index, itemAt.Index);
 					}
@@ -342,9 +342,9 @@ namespace ZShellUI
 		private void RuleForm_KeyDown(object sender, KeyEventArgs e)
 		{
 			Keys keyCode = e.KeyCode;
-			if (keyCode != 13)
+			if (keyCode != (Keys)13)
 			{
-				if (keyCode == 27)
+				if (keyCode == (Keys)27)
 				{
 					this.buttonCancel_Click(this, new EventArgs());
 				}
@@ -410,7 +410,7 @@ namespace ZShellUI
 			base.SuspendLayout();
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.textBoxName);
-			this.panel1.Dock = 1;
+			this.panel1.Dock = (System.Windows.Forms.DockStyle)1;
 			this.panel1.Location = new Point(0, 0);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new Size(399, 53);
@@ -421,13 +421,13 @@ namespace ZShellUI
 			this.label1.Size = new Size(74, 13);
 			this.label1.TabIndex = 5;
 			this.label1.Text = "Имя правила";
-			this.textBoxName.Anchor = 13;
+			this.textBoxName.Anchor = (System.Windows.Forms.AnchorStyles)13;
 			this.textBoxName.Location = new Point(3, 25);
 			this.textBoxName.Name = "textBoxName";
 			this.textBoxName.Size = new Size(393, 20);
 			this.textBoxName.TabIndex = 4;
 			this.textBoxName.Validating += new CancelEventHandler(this.textBoxName_Validating);
-			this.splitContainer1.Dock = 5;
+			this.splitContainer1.Dock = (System.Windows.Forms.DockStyle)5;
 			this.splitContainer1.Location = new Point(0, 53);
 			this.splitContainer1.Name = "splitContainer1";
 			this.splitContainer1.Orientation = 0;
@@ -443,14 +443,14 @@ namespace ZShellUI
 			this.groupBox1.Controls.Add(this.listViewCondition);
 			this.groupBox1.Controls.Add(this.buttonEditCondition);
 			this.groupBox1.Controls.Add(this.buttonAddCondition);
-			this.groupBox1.Dock = 5;
+			this.groupBox1.Dock = (System.Windows.Forms.DockStyle)5;
 			this.groupBox1.Location = new Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new Size(399, 250);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Условия правила";
-			this.buttonRemoveCondition.Anchor = 9;
+			this.buttonRemoveCondition.Anchor = (System.Windows.Forms.AnchorStyles)9;
 			this.buttonRemoveCondition.Location = new Point(293, 74);
 			this.buttonRemoveCondition.Name = "buttonRemoveCondition";
 			this.buttonRemoveCondition.Size = new Size(100, 23);
@@ -459,7 +459,7 @@ namespace ZShellUI
 			this.buttonRemoveCondition.UseVisualStyleBackColor = true;
 			this.buttonRemoveCondition.Click += new EventHandler(this.buttonRemoveCondition_Click);
 			this.listViewCondition.AllowDrop = true;
-			this.listViewCondition.Anchor = 15;
+			this.listViewCondition.Anchor = (System.Windows.Forms.AnchorStyles)15;
 			this.listViewCondition.Columns.AddRange(new ColumnHeader[]
 			{
 				this.columnHeader1
@@ -467,7 +467,7 @@ namespace ZShellUI
 			this.listViewCondition.ForeColor = Color.DarkBlue;
 			this.listViewCondition.FullRowSelect = true;
 			this.listViewCondition.GridLines = true;
-			this.listViewCondition.HeaderStyle = 1;
+			this.listViewCondition.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewCondition.HideSelection = false;
 			this.listViewCondition.Location = new Point(3, 16);
 			this.listViewCondition.MultiSelect = false;
@@ -475,14 +475,14 @@ namespace ZShellUI
 			this.listViewCondition.Size = new Size(284, 232);
 			this.listViewCondition.TabIndex = 11;
 			this.listViewCondition.UseCompatibleStateImageBehavior = false;
-			this.listViewCondition.View = 1;
+			this.listViewCondition.View = (System.Windows.Forms.View)1;
 			this.listViewCondition.ItemDrag += new ItemDragEventHandler(this.listViewCondition_ItemDrag);
 			this.listViewCondition.DragDrop += new DragEventHandler(this.listViewCondition_DragDrop);
 			this.listViewCondition.DragOver += new DragEventHandler(this.listViewCondition_DragOver);
 			this.listViewCondition.DoubleClick += new EventHandler(this.listViewCondition_DoubleClick);
 			this.columnHeader1.Text = "Условие";
 			this.columnHeader1.Width = 365;
-			this.buttonEditCondition.Anchor = 9;
+			this.buttonEditCondition.Anchor = (System.Windows.Forms.AnchorStyles)9;
 			this.buttonEditCondition.Location = new Point(293, 45);
 			this.buttonEditCondition.Name = "buttonEditCondition";
 			this.buttonEditCondition.Size = new Size(100, 23);
@@ -490,7 +490,7 @@ namespace ZShellUI
 			this.buttonEditCondition.Text = "Изменить";
 			this.buttonEditCondition.UseVisualStyleBackColor = true;
 			this.buttonEditCondition.Click += new EventHandler(this.buttonEditCondition_Click);
-			this.buttonAddCondition.Anchor = 9;
+			this.buttonAddCondition.Anchor = (System.Windows.Forms.AnchorStyles)9;
 			this.buttonAddCondition.Location = new Point(293, 16);
 			this.buttonAddCondition.Name = "buttonAddCondition";
 			this.buttonAddCondition.Size = new Size(100, 23);
@@ -504,14 +504,14 @@ namespace ZShellUI
 			this.groupBox2.Controls.Add(this.listViewResolution);
 			this.groupBox2.Controls.Add(this.buttonEditResolution);
 			this.groupBox2.Controls.Add(this.buttonAddResolution);
-			this.groupBox2.Dock = 5;
+			this.groupBox2.Dock = (System.Windows.Forms.DockStyle)5;
 			this.groupBox2.Location = new Point(0, 0);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new Size(399, 205);
 			this.groupBox2.TabIndex = 5;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Заключения правила";
-			this.buttonCancel.Anchor = 9;
+			this.buttonCancel.Anchor = (System.Windows.Forms.AnchorStyles)9;
 			this.buttonCancel.Location = new Point(292, 172);
 			this.buttonCancel.Name = "buttonCancel";
 			this.buttonCancel.Size = new Size(101, 23);
@@ -519,7 +519,7 @@ namespace ZShellUI
 			this.buttonCancel.Text = "Отмена";
 			this.buttonCancel.UseVisualStyleBackColor = true;
 			this.buttonCancel.Click += new EventHandler(this.buttonCancel_Click);
-			this.buttonRemoveResolution.Anchor = 9;
+			this.buttonRemoveResolution.Anchor = (System.Windows.Forms.AnchorStyles)9;
 			this.buttonRemoveResolution.Location = new Point(293, 74);
 			this.buttonRemoveResolution.Name = "buttonRemoveResolution";
 			this.buttonRemoveResolution.Size = new Size(101, 23);
@@ -527,7 +527,7 @@ namespace ZShellUI
 			this.buttonRemoveResolution.Text = "Удалить";
 			this.buttonRemoveResolution.UseVisualStyleBackColor = true;
 			this.buttonRemoveResolution.Click += new EventHandler(this.buttonRemoveResolution_Click);
-			this.buttonOK.Anchor = 9;
+			this.buttonOK.Anchor = (System.Windows.Forms.AnchorStyles)9;
 			this.buttonOK.Location = new Point(292, 143);
 			this.buttonOK.Name = "buttonOK";
 			this.buttonOK.Size = new Size(100, 23);
@@ -536,7 +536,7 @@ namespace ZShellUI
 			this.buttonOK.UseVisualStyleBackColor = true;
 			this.buttonOK.Click += new EventHandler(this.buttonOK_Click);
 			this.listViewResolution.AllowDrop = true;
-			this.listViewResolution.Anchor = 15;
+			this.listViewResolution.Anchor = (System.Windows.Forms.AnchorStyles)15;
 			this.listViewResolution.Columns.AddRange(new ColumnHeader[]
 			{
 				this.columnHeader2
@@ -544,7 +544,7 @@ namespace ZShellUI
 			this.listViewResolution.ForeColor = Color.DarkBlue;
 			this.listViewResolution.FullRowSelect = true;
 			this.listViewResolution.GridLines = true;
-			this.listViewResolution.HeaderStyle = 1;
+			this.listViewResolution.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewResolution.HideSelection = false;
 			this.listViewResolution.Location = new Point(3, 16);
 			this.listViewResolution.MultiSelect = false;
@@ -552,14 +552,14 @@ namespace ZShellUI
 			this.listViewResolution.Size = new Size(283, 186);
 			this.listViewResolution.TabIndex = 14;
 			this.listViewResolution.UseCompatibleStateImageBehavior = false;
-			this.listViewResolution.View = 1;
+			this.listViewResolution.View = (System.Windows.Forms.View)1;
 			this.listViewResolution.ItemDrag += new ItemDragEventHandler(this.listViewResolution_ItemDrag);
 			this.listViewResolution.DragDrop += new DragEventHandler(this.listViewResolution_DragDrop);
 			this.listViewResolution.DragOver += new DragEventHandler(this.listViewResolution_DragOver);
 			this.listViewResolution.DoubleClick += new EventHandler(this.listViewResolution_DoubleClick);
 			this.columnHeader2.Text = "Заключение";
 			this.columnHeader2.Width = 365;
-			this.buttonEditResolution.Anchor = 9;
+			this.buttonEditResolution.Anchor = (System.Windows.Forms.AnchorStyles)9;
 			this.buttonEditResolution.Location = new Point(292, 45);
 			this.buttonEditResolution.Name = "buttonEditResolution";
 			this.buttonEditResolution.Size = new Size(101, 23);
@@ -567,7 +567,7 @@ namespace ZShellUI
 			this.buttonEditResolution.Text = "Изменить";
 			this.buttonEditResolution.UseVisualStyleBackColor = true;
 			this.buttonEditResolution.Click += new EventHandler(this.buttonEditResolution_Click);
-			this.buttonAddResolution.Anchor = 9;
+			this.buttonAddResolution.Anchor = (System.Windows.Forms.AnchorStyles)9;
 			this.buttonAddResolution.Location = new Point(293, 16);
 			this.buttonAddResolution.Name = "buttonAddResolution";
 			this.buttonAddResolution.Size = new Size(100, 23);
@@ -575,7 +575,7 @@ namespace ZShellUI
 			this.buttonAddResolution.Text = "Добавить";
 			this.buttonAddResolution.UseVisualStyleBackColor = true;
 			this.buttonAddResolution.Click += new EventHandler(this.buttonAddResolution_Click);
-			this.buttonAddVar.Anchor = 9;
+			this.buttonAddVar.Anchor = (System.Windows.Forms.AnchorStyles)9;
 			this.buttonAddVar.Location = new Point(292, 192);
 			this.buttonAddVar.Name = "buttonAddVar";
 			this.buttonAddVar.Size = new Size(100, 52);
@@ -590,7 +590,7 @@ namespace ZShellUI
 			this.MinimumSize = new Size(415, 550);
 			base.Name = "FormRule";
 			base.ShowInTaskbar = false;
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			base.KeyDown += new KeyEventHandler(this.RuleForm_KeyDown);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();

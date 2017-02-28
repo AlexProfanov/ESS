@@ -71,7 +71,7 @@ namespace ZShellUI
 				}
 				catch (ArgumentException ex)
 				{
-					MessageBox.Show("Добавление переменной невозможно.\n" + ex.Message, "Ошибка", 0, 16);
+					MessageBox.Show("Добавление переменной невозможно.\n" + ex.Message, "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 				}
 			}
 		}
@@ -114,13 +114,13 @@ namespace ZShellUI
 				this.varToEdit.Name = this.textBoxName.Text;
 				if (this.varToEdit.Name != variable.Name && Global.knowledgeBase.containsVariableName(this.varToEdit.Name))
 				{
-					MessageBox.Show("Переменная с таким именем уже есть в базе знаний", "Ошибка", 0, 16);
+					MessageBox.Show("Переменная с таким именем уже есть в базе знаний", "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 				}
 				else
 				{
 					if (variable.Domain != this.varToEdit.Domain)
 					{
-						if (MessageBox.Show("Домен переменной изменился. Это может привести к удалению всех условий (вида перем-ая - значение) и заключений, где использовалась эта переменная. Хотите продолжить?", "Внимание", 4, 32) != 6)
+						if (MessageBox.Show("Домен переменной изменился. Это может привести к удалению всех условий (вида перем-ая - значение) и заключений, где использовалась эта переменная. Хотите продолжить?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)32) != (DialogResult)6)
 						{
 							return;
 						}
@@ -332,9 +332,9 @@ namespace ZShellUI
 		private void FormAddEditVar_KeyDown(object sender, KeyEventArgs e)
 		{
 			Keys keyCode = e.KeyCode;
-			if (keyCode != 13)
+			if (keyCode != (Keys)13)
 			{
-				if (keyCode == 27)
+				if (keyCode == (Keys)27)
 				{
 					this.buttonCancel_Click(this, new EventArgs());
 				}
@@ -357,7 +357,7 @@ namespace ZShellUI
 
 		private void listViewValues_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				if (e.Data.GetDataPresent(typeof(ListViewItem)))
 				{
@@ -367,7 +367,7 @@ namespace ZShellUI
 					if (itemAt != null)
 					{
 						Enumeration selectedDomain = this.getSelectedDomain();
-						if (e.Effect == 2)
+						if (e.Effect == (DragDropEffects)2)
 						{
 							selectedDomain.insertValueInto(listViewItem.Index, itemAt.Index);
 						}
@@ -496,7 +496,7 @@ namespace ZShellUI
 			this.listViewValues.ForeColor = Color.DarkBlue;
 			this.listViewValues.FullRowSelect = true;
 			this.listViewValues.GridLines = true;
-			this.listViewValues.HeaderStyle = 1;
+			this.listViewValues.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewValues.HideSelection = false;
 			this.listViewValues.Location = new Point(3, 53);
 			this.listViewValues.MultiSelect = false;
@@ -504,7 +504,7 @@ namespace ZShellUI
 			this.listViewValues.Size = new Size(373, 172);
 			this.listViewValues.TabIndex = 5;
 			this.listViewValues.UseCompatibleStateImageBehavior = false;
-			this.listViewValues.View = 1;
+			this.listViewValues.View = (System.Windows.Forms.View)1;
 			this.listViewValues.ItemDrag += new ItemDragEventHandler(this.listViewValues_ItemDrag);
 			this.listViewValues.DragDrop += new DragEventHandler(this.listViewValues_DragDrop);
 			this.listViewValues.DragOver += new DragEventHandler(this.listViewValues_DragOver);
@@ -513,7 +513,7 @@ namespace ZShellUI
 			this.columnHeader2.Text = "Имя";
 			this.columnHeader2.Width = 230;
 			this.comboBoxDomain.DropDownHeight = 400;
-			this.comboBoxDomain.DropDownStyle = 2;
+			this.comboBoxDomain.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)2;
 			this.comboBoxDomain.FormattingEnabled = true;
 			this.comboBoxDomain.IntegralHeight = false;
 			this.comboBoxDomain.Location = new Point(6, 26);
@@ -529,7 +529,7 @@ namespace ZShellUI
 			this.groupBoxQuestion.TabIndex = 10;
 			this.groupBoxQuestion.TabStop = false;
 			this.groupBoxQuestion.Text = "Текст запроса";
-			this.richTextBoxQuestion.Dock = 5;
+			this.richTextBoxQuestion.Dock = (System.Windows.Forms.DockStyle)5;
 			this.richTextBoxQuestion.Location = new Point(3, 16);
 			this.richTextBoxQuestion.Name = "richTextBoxQuestion";
 			this.richTextBoxQuestion.Size = new Size(376, 81);
@@ -565,7 +565,7 @@ namespace ZShellUI
 			this.MinimumSize = new Size(422, 564);
 			base.Name = "FormAddEditVariable";
 			base.ShowInTaskbar = false;
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			base.KeyDown += new KeyEventHandler(this.FormAddEditVar_KeyDown);
 			this.groupBoxVarType.ResumeLayout(false);
 			this.groupBoxVarType.PerformLayout();

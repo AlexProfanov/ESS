@@ -168,7 +168,7 @@ namespace ZShellUI
 				while (enumerator.MoveNext())
 				{
 					int variableIndex = (int)enumerator.Current;
-					if (MessageBox.Show("Вы действительно хотите удалить переменную с именем " + Global.knowledgeBase.getVariableAt(variableIndex).Name + " ? Удаление переменной приведет к удалению посылок и заключений, которые ее используют.", "Внимание", 4, 32) == 6)
+					if (MessageBox.Show("Вы действительно хотите удалить переменную с именем " + Global.knowledgeBase.getVariableAt(variableIndex).Name + " ? Удаление переменной приведет к удалению посылок и заключений, которые ее используют.", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)32) == (DialogResult)6)
 					{
 						Global.knowledgeBase.removeVariableAt(variableIndex);
 						this.printVariableList();
@@ -225,7 +225,7 @@ namespace ZShellUI
 
 		private void listViewVar_DragDrop(object sender, DragEventArgs e)
 		{
-			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", 4, 48) == 6)
+			if (MessageBox.Show("Вы действительно хотите переместить элемент ?", "Внимание", (System.Windows.Forms.MessageBoxButtons)4, (System.Windows.Forms.MessageBoxIcon)48) == (DialogResult)6)
 			{
 				if (e.Data.GetDataPresent(typeof(ListViewItem)))
 				{
@@ -234,7 +234,7 @@ namespace ZShellUI
 					ListViewItem itemAt = this.listViewVar.GetItemAt(point.X, point.Y);
 					if (itemAt != null)
 					{
-						if (e.Effect == 2)
+						if (e.Effect == (DragDropEffects)2)
 						{
 							Global.knowledgeBase.insertVariableInto(listViewItem.Index, itemAt.Index);
 						}
@@ -247,11 +247,11 @@ namespace ZShellUI
 		private void FormVarList_KeyDown(object sender, KeyEventArgs e)
 		{
 			Keys keyCode = e.KeyCode;
-			if (keyCode != 13)
+			if (keyCode != (Keys)13)
 			{
-				if (keyCode != 27)
+				if (keyCode != (Keys)27)
 				{
-					if (keyCode == 46)
+					if (keyCode == (Keys)46)
 					{
 						this.buttonRemoveVar_Click(this, new EventArgs());
 					}
@@ -301,7 +301,7 @@ namespace ZShellUI
 			this.columnHeader4 = new ColumnHeader();
 			this.groupBox2.SuspendLayout();
 			base.SuspendLayout();
-			this.buttonClose.Anchor = 10;
+			this.buttonClose.Anchor = (System.Windows.Forms.AnchorStyles)10;
 			this.buttonClose.Location = new Point(797, 506);
 			this.buttonClose.Name = "buttonClose";
 			this.buttonClose.Size = new Size(103, 23);
@@ -309,7 +309,7 @@ namespace ZShellUI
 			this.buttonClose.Text = "Закрыть";
 			this.buttonClose.UseVisualStyleBackColor = true;
 			this.buttonClose.Click += new EventHandler(this.buttonClose_Click);
-			this.groupBox2.Anchor = 11;
+			this.groupBox2.Anchor = (System.Windows.Forms.AnchorStyles)11;
 			this.groupBox2.Controls.Add(this.label3);
 			this.groupBox2.Controls.Add(this.richTextBoxQuestion);
 			this.groupBox2.Controls.Add(this.label2);
@@ -328,7 +328,7 @@ namespace ZShellUI
 			this.label3.Size = new Size(171, 13);
 			this.label3.TabIndex = 5;
 			this.label3.Text = "Текст вопроса для означивания";
-			this.richTextBoxQuestion.Anchor = 3;
+			this.richTextBoxQuestion.Anchor = (System.Windows.Forms.AnchorStyles)3;
 			this.richTextBoxQuestion.Location = new Point(10, 122);
 			this.richTextBoxQuestion.Name = "richTextBoxQuestion";
 			this.richTextBoxQuestion.ReadOnly = true;
@@ -360,7 +360,7 @@ namespace ZShellUI
 			this.textBoxVarType.Size = new Size(238, 20);
 			this.textBoxVarType.TabIndex = 0;
 			this.textBoxVarType.TabStop = false;
-			this.buttonRemoveVar.Anchor = 6;
+			this.buttonRemoveVar.Anchor = (System.Windows.Forms.AnchorStyles)6;
 			this.buttonRemoveVar.Location = new Point(387, 506);
 			this.buttonRemoveVar.Name = "buttonRemoveVar";
 			this.buttonRemoveVar.Size = new Size(103, 23);
@@ -368,7 +368,7 @@ namespace ZShellUI
 			this.buttonRemoveVar.Text = "Удалить";
 			this.buttonRemoveVar.UseVisualStyleBackColor = true;
 			this.buttonRemoveVar.Click += new EventHandler(this.buttonRemoveVar_Click);
-			this.buttonEditVar.Anchor = 6;
+			this.buttonEditVar.Anchor = (System.Windows.Forms.AnchorStyles)6;
 			this.buttonEditVar.Location = new Point(278, 506);
 			this.buttonEditVar.Name = "buttonEditVar";
 			this.buttonEditVar.Size = new Size(103, 23);
@@ -376,7 +376,7 @@ namespace ZShellUI
 			this.buttonEditVar.Text = "Редактировать";
 			this.buttonEditVar.UseVisualStyleBackColor = true;
 			this.buttonEditVar.Click += new EventHandler(this.buttonEditVar_Click);
-			this.buttonAddVar.Anchor = 6;
+			this.buttonAddVar.Anchor = (System.Windows.Forms.AnchorStyles)6;
 			this.buttonAddVar.Location = new Point(169, 506);
 			this.buttonAddVar.Name = "buttonAddVar";
 			this.buttonAddVar.Size = new Size(103, 23);
@@ -385,7 +385,7 @@ namespace ZShellUI
 			this.buttonAddVar.UseVisualStyleBackColor = true;
 			this.buttonAddVar.Click += new EventHandler(this.buttonAddVar_Click);
 			this.listViewVar.AllowDrop = true;
-			this.listViewVar.Anchor = 15;
+			this.listViewVar.Anchor = (System.Windows.Forms.AnchorStyles)15;
 			this.listViewVar.Columns.AddRange(new ColumnHeader[]
 			{
 				this.columnHeader1,
@@ -396,7 +396,7 @@ namespace ZShellUI
 			this.listViewVar.ForeColor = Color.DarkBlue;
 			this.listViewVar.FullRowSelect = true;
 			this.listViewVar.GridLines = true;
-			this.listViewVar.HeaderStyle = 1;
+			this.listViewVar.HeaderStyle = (System.Windows.Forms.ColumnHeaderStyle)1;
 			this.listViewVar.HideSelection = false;
 			this.listViewVar.Location = new Point(0, 0);
 			this.listViewVar.MultiSelect = false;
@@ -404,7 +404,7 @@ namespace ZShellUI
 			this.listViewVar.Size = new Size(696, 500);
 			this.listViewVar.TabIndex = 0;
 			this.listViewVar.UseCompatibleStateImageBehavior = false;
-			this.listViewVar.View = 1;
+			this.listViewVar.View = (System.Windows.Forms.View)1;
 			this.listViewVar.ItemDrag += new ItemDragEventHandler(this.listViewVar_ItemDrag);
 			this.listViewVar.SelectedIndexChanged += new EventHandler(this.listViewVar_SelectedIndexChanged);
 			this.listViewVar.DragDrop += new DragEventHandler(this.listViewVar_DragDrop);
@@ -429,7 +429,7 @@ namespace ZShellUI
 			this.MinimumSize = new Size(980, 570);
 			base.Name = "FormVariableList";
 			base.ShowInTaskbar = false;
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			this.Text = "Список переменных";
 			base.KeyDown += new KeyEventHandler(this.FormVarList_KeyDown);
 			this.groupBox2.ResumeLayout(false);

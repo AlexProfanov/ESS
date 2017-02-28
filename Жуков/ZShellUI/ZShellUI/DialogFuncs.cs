@@ -13,7 +13,7 @@ namespace ZShellUI
 			if (listView.SelectedItems.Count > 0)
 			{
 				ListViewItem listViewItem = listView.SelectedItems[0];
-				listView.DoDragDrop(listViewItem, 2);
+				listView.DoDragDrop(listViewItem, (System.Windows.Forms.DragDropEffects)2);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace ZShellUI
 			else
 			{
 				listView.SelectedItems.Clear();
-				e.Effect = 2;
+				e.Effect = (System.Windows.Forms.DragDropEffects)2;
 				Point point = new Point(e.X, e.Y);
 				Point point2 = listView.PointToClient(point);
 				ListViewItem itemAt = listView.GetItemAt(point2.X, point2.Y);
@@ -64,7 +64,7 @@ namespace ZShellUI
 
 		public static void showAllVariables(ComboBox comboBox)
 		{
-			comboBox.DropDownStyle = 2;
+			comboBox.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)2;
 			comboBox.Items.Clear();
 			IEnumerator<Variable> enumeratorForVariables = Global.knowledgeBase.getEnumeratorForVariables();
 			while (enumeratorForVariables.MoveNext())
@@ -76,7 +76,7 @@ namespace ZShellUI
 
 		public static void showDeducableVariables(ComboBox comboBox)
 		{
-			comboBox.DropDownStyle = 2;
+			comboBox.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)2;
 			comboBox.Items.Clear();
 			IEnumerator<Variable> enumeratorForVariables = Global.knowledgeBase.getEnumeratorForVariables();
 			while (enumeratorForVariables.MoveNext())
@@ -91,7 +91,7 @@ namespace ZShellUI
 
 		public static void showAllVariables(ComboBox comboBox, Variable variable)
 		{
-			comboBox.DropDownStyle = 2;
+			comboBox.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)2;
 			comboBox.Items.Clear();
 			IEnumerator<Variable> enumeratorForVariables = Global.knowledgeBase.getEnumeratorForVariables();
 			if (variable.Domain != null)
@@ -122,7 +122,7 @@ namespace ZShellUI
 			comboBox.Items.Clear();
 			if (variable.Domain != null)
 			{
-				comboBox.DropDownStyle = 2;
+				comboBox.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)2;
 				IEnumerator<Value> enumeratorForValues = variable.Domain.getEnumeratorForValues();
 				while (enumeratorForValues.MoveNext())
 				{
@@ -135,7 +135,7 @@ namespace ZShellUI
 			}
 			else
 			{
-				comboBox.DropDownStyle = 1;
+				comboBox.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)1;
 				comboBox.Text = "";
 			}
 		}

@@ -38,7 +38,7 @@ namespace ZShellUI
 			this.Text = "Добавление условия";
 			if (!Global.knowledgeBase.hasAnyVariables())
 			{
-				MessageBox.Show("Добавление условия невозможно: нет объявленых переменных", "Внимание", 0, 16);
+				MessageBox.Show("Добавление условия невозможно: нет объявленых переменных", "Внимание", 0, (System.Windows.Forms.MessageBoxIcon)16);
 			}
 			else
 			{
@@ -55,9 +55,9 @@ namespace ZShellUI
 					{
 						valueForVariable = DialogFuncs.getValueForVariable(selectedVariable.Type, this.comboBoxSecArg);
 					}
-					catch (FormatException var_4_CB)
+					catch (FormatException)
 					{
-						MessageBox.Show("Добавление условия невозможно. Значение переменной должно приводиться к типу " + selectedVariable.Type.ToString(), "Ошибка", 0, 16);
+						MessageBox.Show("Добавление условия невозможно. Значение переменной должно приводиться к типу " + selectedVariable.Type.ToString(), "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 						return;
 					}
 					Condition condition;
@@ -67,7 +67,7 @@ namespace ZShellUI
 					}
 					catch (ArgumentException ex)
 					{
-						MessageBox.Show("Добавление условия невозможно.\n" + ex.Message, "Ошибка", 0, 16);
+						MessageBox.Show("Добавление условия невозможно.\n" + ex.Message, "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 						return;
 					}
 					rule.addCondition(condition);
@@ -99,9 +99,9 @@ namespace ZShellUI
 					{
 						valueForVariable = DialogFuncs.getValueForVariable(selectedVariable.Type, this.comboBoxSecArg);
 					}
-					catch (FormatException var_3_D7)
+					catch (FormatException)
 					{
-						MessageBox.Show("Добавление условия невозможно. Значение переменной должно приводиться к типу " + selectedVariable.Type.ToString(), "Ошибка", 0, 16);
+						MessageBox.Show("Добавление условия невозможно. Значение переменной должно приводиться к типу " + selectedVariable.Type.ToString(), "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 						return;
 					}
 					variableAndValueCondition.setVariableAndValue(selectedVariable, valueForVariable);
@@ -140,9 +140,9 @@ namespace ZShellUI
 		private void FormAddEditCondition_KeyDown(object sender, KeyEventArgs e)
 		{
 			Keys keyCode = e.KeyCode;
-			if (keyCode != 13)
+			if (keyCode != (Keys)13)
 			{
-				if (keyCode == 27)
+				if (keyCode == (Keys)27)
 				{
 					this.buttonCancel_Click(this, new EventArgs());
 				}
@@ -173,7 +173,7 @@ namespace ZShellUI
 			this.toolTip = new ToolTip(this.components);
 			base.SuspendLayout();
 			this.comboBoxFirstArg.DropDownHeight = 400;
-			this.comboBoxFirstArg.DropDownStyle = 2;
+			this.comboBoxFirstArg.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)2;
 			this.comboBoxFirstArg.FormattingEnabled = true;
 			this.comboBoxFirstArg.IntegralHeight = false;
 			this.comboBoxFirstArg.Location = new Point(10, 12);
@@ -182,7 +182,7 @@ namespace ZShellUI
 			this.comboBoxFirstArg.TabIndex = 0;
 			this.comboBoxFirstArg.SelectedIndexChanged += new EventHandler(this.comboBoxFirstArg_SelectedIndexChanged);
 			this.comboBoxComparer.DropDownHeight = 400;
-			this.comboBoxComparer.DropDownStyle = 2;
+			this.comboBoxComparer.DropDownStyle = (System.Windows.Forms.ComboBoxStyle)2;
 			this.comboBoxComparer.FormattingEnabled = true;
 			this.comboBoxComparer.IntegralHeight = false;
 			this.comboBoxComparer.Items.AddRange(new object[]
@@ -225,7 +225,7 @@ namespace ZShellUI
 			base.MinimizeBox = false;
 			base.Name = "FormAddEditCondition";
 			base.ShowInTaskbar = false;
-			base.StartPosition = 4;
+			base.StartPosition = (System.Windows.Forms.FormStartPosition)4;
 			base.KeyDown += new KeyEventHandler(this.FormAddEditCondition_KeyDown);
 			base.ResumeLayout(false);
 		}

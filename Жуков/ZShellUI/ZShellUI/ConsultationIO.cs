@@ -41,9 +41,9 @@ namespace ZShellUI
 				this.formConsultation.listBoxDialog.Items.Add(">: " + value.ToString());
 				this.formConsultation.listBoxDialog.Items.Add("");
 			}
-			catch (FormatException var_1_11C)
+			catch (FormatException)
 			{
-				MessageBox.Show("Означивание переменной невозможно. Значение переменной должно приводиться к типу " + variable.Type.ToString(), "Ошибка", 0, 16);
+				MessageBox.Show("Означивание переменной невозможно. Значение переменной должно приводиться к типу " + variable.Type.ToString(), "Ошибка", 0, (System.Windows.Forms.MessageBoxIcon)16);
 				value = this.askQuestion(question, variable);
 			}
 			return value;
