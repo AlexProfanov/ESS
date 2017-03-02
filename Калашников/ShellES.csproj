@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{50E8C803-61AA-4436-B60A-3CA0F92C0AA5}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>ShellES</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShellES.Components\ComponentPrototype.cs" />
+    <Compile Include="ShellES.Components\ESDataBase.cs" />
+    <Compile Include="ShellES.Components\eTypeEvent.cs" />
+    <Compile Include="ShellES.Components\ExplanationComponent.cs" />
+    <Compile Include="ShellES.Components\LogicalOutputEngine.cs" />
+    <Compile Include="ShellES.Components\ReceiveKnowleageComponent.cs" />
+    <Compile Include="ShellES.Components\Settings.cs" />
+    <Compile Include="ShellES.Components\WorkRamComponent.cs" />
+    <Compile Include="ShellES.Entities\ESDomains.cs" />
+    <Compile Include="ShellES.Entities\ESDomainValue.cs" />
+    <Compile Include="ShellES.Entities\ESFact.cs" />
+    <Compile Include="ShellES.Entities\ESRules.cs" />
+    <Compile Include="ShellES.Entities\ESVars.cs" />
+    <Compile Include="ShellES.Properties\Resources.cs" />
+    <Compile Include="ShellES.Properties\Settings.cs" />
+    <Compile Include="ShellES.VisualComponents\DataGridViewConnectedCombos.cs" />
+    <Compile Include="ShellES.VisualComponents\DataGridViewRowsReorderBehavior.cs" />
+    <Compile Include="ShellES.VisualComponents\dlgKeyUp.cs" />
+    <Compile Include="ShellES\ConsultForm.cs" />
+    <Compile Include="ShellES\DelegateMoveCurObjInBind.cs" />
+    <Compile Include="ShellES\dlgESSConsult.cs" />
+    <Compile Include="ShellES\dlgSettingText.cs" />
+    <Compile Include="ShellES\eExplainType.cs" />
+    <Compile Include="ShellES\ExpertSystemShell.cs" />
+    <Compile Include="ShellES\MainForm.cs" />
+    <Compile Include="ShellES\Program.cs" />
+    <Compile Include="ShellES\ResultForm.cs" />
+    <Compile Include="ShellES\StaticHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ShellES.Properties\Resources.resx" />
+    <EmbeddedResource Include="ShellES\MainForm.resx" />
+    <EmbeddedResource Include="ShellES\Resources.Безымянный451.bmp" />
+    <EmbeddedResource Include="ShellES\ResultForm.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
